@@ -7,9 +7,11 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/user_v1:
+ * /api/v1/user:
  *  get:
  *    description: Get a user
+ *    tags:
+ *      - user
  *    parameters:
  *      - in: query
  *        name: environment
@@ -25,6 +27,6 @@ const router = express.Router();
  *      '200':
  *        description: A successful response
  */
-router.get('/user_v1', getUser);
+router.get('/user', getUser);
 
 export default router;
