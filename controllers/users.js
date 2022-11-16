@@ -12,7 +12,6 @@ export const getUser = (req, res) => {
             res.sendStatus(404);
         }
         const data = fs.readFileSync(path, 'utf8');
-        console.log(data);
         res.send(data);
     } catch (error) {
         console.error(error);
