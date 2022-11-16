@@ -26,6 +26,8 @@ const router = express.Router();
  *    responses:
  *      '200':
  *        description: A successful response
+ *      '404':
+ *        description: The specified user does not exist
  */
 router.get('/user', getUser);
 
