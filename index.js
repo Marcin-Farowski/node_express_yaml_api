@@ -18,7 +18,7 @@ const swaggerOptions = {
             contact    : {
                 name: 'Developer'
             },
-            servers    : ['http://localhost:5000']
+            servers    : ['http://localhost:5000/api']
         }
     },
     apis             : ['./routes/*.js']
@@ -26,11 +26,12 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.get('/', (req, res) => res.redirect('/api-docs'));
 
 app.use(bodyParser.json());
 
 app.use('/api', usersRoutes);
-app.get('/', (req, res) => res.send('Welcome!'));
+app.get('/', (req, res) => res.send('Welcome! <a>http://localhost:5000/api-docs</a>'));
 app.all('*', (req, res) => res.send('That route doesn\'t exist.'));
 
-app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}/api`));
