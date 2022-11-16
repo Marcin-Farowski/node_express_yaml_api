@@ -11,7 +11,7 @@ const router = express.Router();
  *  get:
  *    description: Get a user
  *    tags:
- *      - user
+ *      - user v1.0.0
  *    parameters:
  *      - in: query
  *        name: environment
