@@ -6,8 +6,8 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/v1/user:
- *  get:
+ * /api/v1/get_user:
+ *  post:
  *    description: Get a user
  *    tags:
  *      - user v1.0.0
@@ -28,11 +28,11 @@ const router = express.Router();
  *      '404':
  *        description: The specified user does not exist
  */
-router.get('/user', getUser);
+router.post('/get_user', getUser);
 
 /**
  * @swagger
- * /api/v1/user:
+ * /api/v1/create_user:
  *  post:
  *    description: Create a user
  *    tags:
@@ -64,6 +64,6 @@ router.get('/user', getUser);
  *      '400' :
  *        description: Bad Request
  */
-router.post('/user', createUser);
+router.post('/create_user', createUser);
 
 export default router;
