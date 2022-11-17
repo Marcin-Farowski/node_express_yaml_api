@@ -7,7 +7,7 @@ exports.getUser_v2 = exports.createUser = exports.getUser = void 0;
 const fs_1 = __importDefault(require("fs"));
 let users = [];
 const isSomeStringEmpty = function (arr) {
-    return arr.some(element => element === '');
+    return arr.some(element => element === undefined);
 };
 //----------------------------------------------------------------------------------
 // v1.0.0
