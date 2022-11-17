@@ -30,7 +30,7 @@ app.get('/', (req, res) => res.redirect('/api-docs'));
 
 app.use(bodyParser.json());
 
-app.use('/api/v1', usersRoutes);
+app.use('/api', usersRoutes);
 app.get('/', (req, res) => res.send('Welcome! <a>http://localhost:5000/api-docs</a>'));
 app.all('*', (req, res) => res.send('That route doesn\'t exist.'));
 

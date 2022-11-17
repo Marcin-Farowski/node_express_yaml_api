@@ -1,16 +1,19 @@
 import express from 'express';
 
-import { getUser, createUser } from '../controllers/users.js';
+import { getUser, createUser, getUser_v2 } from '../controllers/users.js';
 
 const router = express.Router();
 
+//----------------------------------------------------------------------------------
+// v1.0.0
+
 /**
  * @swagger
- * /api/v1/get_user:
+ * /api/get_user:
  *  post:
  *    description: Get a user
  *    tags:
- *      - user v1.0.0
+ *      - user
  *    parameters:
  *      - in: query
  *        name: environment
@@ -32,11 +35,11 @@ router.post('/get_user', getUser);
 
 /**
  * @swagger
- * /api/v1/create_user:
+ * /api/create_user:
  *  post:
  *    description: Create a user
  *    tags:
- *      - user v1.0.0
+ *      - user
  *    parameters:
  *      - in: query
  *        name: environment
@@ -67,3 +70,37 @@ router.post('/get_user', getUser);
 router.post('/create_user', createUser);
 
 export default router;
+
+//----------------------------------------------------------------------------------
+// v1.0.1
+
+/**
+ * @swagger
+ * /api/v2/get_user:
+ *  post:
+ *    description: Get a user
+ *    tags:
+ *      - user v2
+ *    parameters:
+ *      - in: query
+ *        name: environment
+ *        enum: [ "engUsers", "testUsers" ]
+ *        required: true
+ *        description: environment
+ *      - in: body
+ *        name: user
+ *        description: User data
+ *        schema:
+ *          type: object
+ *          properties:
+ *            email:
+ *              type: string
+ *            name:
+ *              type: string
+ *    responses:
+ *      '200':
+ *        description: A successful response
+ *      '404':
+ *        description: Not found
+ */
+router.post('/v2/get_user', getUser_v2);
