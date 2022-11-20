@@ -24,7 +24,7 @@ const swaggerOptions = {
             servers: ['http://localhost:5000/api']
         }
     },
-    apis: ['./routes/*']
+    apis: ['dist/routes/*']
 };
 const swaggerDocs = (0, swagger_jsdoc_1.default)(swaggerOptions);
 app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDocs));

@@ -23,7 +23,7 @@ const swaggerOptions = {
             servers: ['http://localhost:5000/api']
         }
     },
-    apis: ['./routes/*']
+    apis: ['dist/routes/*']
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
