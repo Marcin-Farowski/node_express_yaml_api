@@ -27,3 +27,11 @@ JavaScript files before every `npm start`.*
 *You can use `npm run dev` - this command supports hot reloads, and it runs application from TypeScript files.*
 
 *Tests can be run via command:* `npm test`
+
+---
+
+**Docker** commands:
+
+`docker build -t image_name .`
+
+`docker run -p 8081:5000 image_name`
